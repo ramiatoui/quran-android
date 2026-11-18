@@ -1,0 +1,31 @@
+# Template for https://gitlab.com/fdroid/fdroiddata -> metadata/app.mushaf.arabi.yml
+# See docs/PUBLISHING.md before submitting.
+Categories:
+  - Reading
+License: GPL-3.0-or-later
+AuthorName: B.A
+SourceCode: https://github.com/ramiatoui/quran-android
+IssueTracker: https://github.com/ramiatoui/quran-android/issues
+Changelog: https://github.com/ramiatoui/quran-android/releases
+
+# The King Fahd Complex fonts (uthmanic-*.ttf) are not under a free license.
+# Remove this line only if those fonts are removed or relicensed.
+AntiFeatures:
+  NonFreeAssets:
+    en-US: Bundled Uthmanic fonts are copyrighted by the King Fahd Complex.
+
+RepoType: git
+Repo: https://github.com/ramiatoui/quran-android.git
+
+Builds:
+  - versionName: '1.6'
+    versionCode: 6
+    commit: v1.6
+    subdir: app
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: '1.6'
+CurrentVersionCode: 6

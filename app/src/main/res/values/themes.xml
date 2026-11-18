@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.Mushaf" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">#FFFBF6E6</item>
+        <item name="android:statusBarColor">#FF14532D</item>
+        <item name="android:navigationBarColor">#FF14532D</item>
+    </style>
+</resources>

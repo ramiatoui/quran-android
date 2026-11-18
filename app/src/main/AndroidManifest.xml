@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- no permissions on purpose: the app works fully offline (fonts and data are bundled) -->
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="false"
+        android:theme="@style/Theme.Mushaf">
+        <!-- WebView: no usage statistics to Google, no Safe Browsing lookups (the page is local) -->
+        <meta-data android:name="android.webkit.WebView.MetricsOptOut" android:value="true" />
+        <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing" android:value="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

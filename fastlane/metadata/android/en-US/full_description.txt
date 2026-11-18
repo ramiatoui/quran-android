@@ -1,0 +1,10 @@
+A light Mushaf that works fully offline and needs no permissions.
+
+• Riwayat: Qalon, Warsh, Al-Duri, Al-Susi, Shu'bah and Hafs
+• Auto-scroll with adjustable speed
+• Reading position saved automatically, multiple bookmarks
+• Indexes: surahs, juz, hizb, rub', thumn, sajdas
+• Text search, copy and share verses
+• Tajweed colours, font sizes and three themes (white / paper / dark)
+• A dedicated font for each riwaya, plus your own font
+• Built to run on very low-end phones

@@ -12,12 +12,7 @@ This guide covers three channels:
 
 1. Bump `versionCode` (+1) and `versionName` in `app/build.gradle.kts`.
 2. Add a changelog file `fastlane/metadata/android/en-US/changelogs/<versionCode>.txt` (and `ar/changelogs/<versionCode>.txt`), max 500 characters.
-3. Commit, then tag and push:
-   ```sh
-   git tag v1.6
-   git push origin v1.6
-   ```
-   The `Build APK` workflow builds the APKs and attaches them to a GitHub Release for that tag.
+3. Commit and push to `master`. When no release exists yet for the new `versionName`, the `Build APK` workflow creates the tag `v<versionName>` and a GitHub Release with the APKs attached. (Pushing a `v*` tag by hand also works.)
 
 ### Release signing (GitHub Releases / Google Play)
 

@@ -71,9 +71,24 @@ jobs:
           name: mushaf-${{ env.VERSION }}-apk
           path: dist/*.apk
 
+      - name: Check if release exists for this version
+        id: rel
+        if: github.event_name == 'push' && (startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v$VERSION" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 && [[ "$GITHUB_REF" != refs/tags/* ]]; then
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Publish GitHub release
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: steps.rel.outputs.publish == 'true'
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: v${{ env.VERSION }}
+          name: Mushaf ${{ env.VERSION }}
+          target_commitish: ${{ github.sha }}
           files: dist/*.apk
           generate_release_notes: true
